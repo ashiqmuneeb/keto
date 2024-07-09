@@ -1,0 +1,32 @@
+<title>Bill</title>
+
+{% load static %}
+
+{% include 'incs/head.html' %}
+
+
+<body class="main-layout">
+    
+    {% include 'incs/nav.html' %}
+
+    {% block context %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill</title>
+</head>
+<body>
+    <h1>Bill Details</h1>
+    <p><strong>Guest:</strong> {{ guest.user.first_name }} {{ guest.user.last_name }}</p>
+    <p><strong>Total Amount:</strong> ${{ bill.totalAmount }}</p>
+    <p><strong>Summary:</strong> {{ bill.summary }}</p>
+    <p><strong>Date:</strong> {{ bill.date }}</p>
+
+    {% endblock %}
+
+
+    {% include 'incs/footer.html' %}
+    
+</body>
+</html>
